@@ -1,0 +1,93 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+.container{
+max-width: 1980px;  
+}
+
+header {
+    background-image: radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, #fff 30%, #fff 40%, transparent 90%), radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, #fff 15%, #fff 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 8px 8px, transparent 0%, transparent 20%, #fff 15%, #fff 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 0px 8px, transparent 0%, transparent 20%, #fff 15%, #fff 20%, transparent 40%), radial-gradient(ellipse farthest-corner at 8px 0px, transparent 0%, transparent 20%, #fff 15%, #fff 20%, transparent 50%), linear-gradient(40deg, #bd2d10 0, #f4502f 30%, #ff6e51 50%, #f4502f 70%, #bd2d10 100%);
+    background-size: 8px 8px, 8px 8px, 8px 8px, 8px 8px, 8px 8px, 100% 100%;
+}
+
+.title {
+    font-family: Comic Sans, Comic Sans MS;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: #FCFC02 -1px 1px, #FCFC02 -2px 2px, #F49F02 -3px 3px, #F49F02 -4px 4px, #F49F02 -5px 5px;
+    justify-content: center;
+}
+
+header div {
+    display: flex;
+    background: white;
+    border: 5px solid #000;
+    border-radius: 50%;
+    height: 7em;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header div p {
+    font-family: Comic Sans, Comic Sans MS;
+    text-align: center;
+    text-transform: uppercase;
+}
+i{
+  color: #00000030;
+  font-size: 400% !important;
+}
+.dislike{
+    position: absolute;
+  top: 8px;
+  right: 80px;
+
+  font-size: 3em;
+  width: 20px;
+  height:20px;
+}
+.like{
+  position: absolute;
+  top: 8px;
+  right: 20px;
+}
+
+i{}
+
+
+.heart i .fa-heart{
+  
+  
+
+}
+.dislike{
+  color: red;
+}
+
+  .heart{
+  animation: heart 0.5s linear;
+}
+@keyframes heart{
+  0%{
+      transform: rotate(0deg) scale(1.7);
+  }
+  40%{
+      transform: rotate(0deg) scale(1);
+  }
+  41%{
+      transform: rotate(360deg) scale(1);
+  }
+  100%{
+      transform: rotate(0deg) scale(1);
+  }
+}
+
+
+
+
+

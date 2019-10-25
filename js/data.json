@@ -1,0 +1,319 @@
+var persons = [{
+
+        "id": "1",
+
+        "disc": "Laser Eye Baby",
+
+        "name": "Superman",
+
+        "age": "45",
+
+        "location": "Metropolis ",
+
+        "hobbys": "save the world, flying",
+
+        "music": "Hans Zimmer, Rave",
+
+        "img": "./img/super.jpg"
+    },
+    {
+
+        "id": "2",
+
+        "name": "Batman",
+
+        "disc": "I´m Batman",
+
+        "age": "32",
+
+        "location": "Gotham City",
+
+        "hobbys": "the history of Gotham, enjoys grilling, and enjoys ‘classic’ black and white movies",
+
+        "music": "classical, opera, and pop music",
+
+        "img": "./img/bat.jpg"
+
+
+    },
+    {
+
+        "id": "3",
+
+        "disc": "Nastrovje",
+
+        "name": "Black Widow",
+
+        "age": "30",
+
+        "location": "Stalingrad",
+
+        "hobbys": "fighting",
+
+        "music": "Indi Rock",
+
+        "img": "./img/black.jpg"
+
+
+    },
+    {
+
+        "id": "4",
+
+        "disc": "With great hotness comes great responsibility.",
+
+        "name": "Spiderman",
+
+        "age": "20",
+
+        "location": "New York",
+
+        "hobbys": "read Comics",
+
+        "music": "rock",
+
+        "img": "./img/spider.jpg"
+
+
+    },
+    {
+
+        "id": "5",
+
+        "disc": "You think I'm just a doll.",
+
+        "name": "Harley Quinn",
+
+        "age": "25",
+
+        "location": "secret",
+
+        "hobbys": "Baseball",
+
+        "music": "Goth, Metal",
+
+        "img": "./img/harly.jpg"
+
+
+    },
+    {
+
+        "id": "6",
+
+        "disc": "Never trust a man who doesn't like cats",
+
+        "name": "Catwomen",
+
+        "age": "40",
+
+        "location": "Gotham",
+
+        "hobbys": "Cats",
+
+        "music": "Musical Cats",
+
+        "img": "./img/cat.jpg"
+
+
+    },
+    {
+
+        "id": "7",
+
+         "disc": "Sometimes you gotta run before you walk",
+
+        "name": "Iron Man",
+
+        "age": "45",
+
+        "location": "New York",
+
+        "hobbys": "Science",
+
+        "music": "Clasic",
+
+        "img": "./img/iron.jpg"
+
+
+    },
+    {
+
+        "id": "8",
+
+         "disc": "Is it just me, or is it getting crazier out there?",
+
+        "name": "Joker",
+
+        "age": "45",
+
+        "location": "Gotham",
+
+        "hobbys": "Chaos",
+
+        "music": "Circus music",
+
+        "img": "./img/joker.jpg"
+
+
+    },
+    {
+
+        "id": "9",
+
+         "disc": "Nature made me a freak.",
+
+        "name": "Wolverine",
+
+        "age": "46",
+
+        "location": "Louisiana",
+
+        "hobbys": "Drinking",
+
+        "music": "Rock",
+
+        "img": "./img/wolf.jpg"
+
+
+    },
+    {
+
+        "id": "10",
+
+         "disc": "In order to live, we must keep daring",
+
+        "name": "Supergirl",
+
+        "age": "23",
+
+        "location": "Metropolis ",
+
+        "hobbys": "save the world, flying",
+
+        "music": "Hans Zimmer, Dub-Step",
+
+        "img": "./img/superg.jpg"
+
+
+    },
+    {
+
+        "id": "11",
+
+         "disc": "Don't wait for the storms of your life to pass",
+
+        "name": "Storm",
+
+        "age": "34",
+
+        "location": "New York",
+
+        "hobbys": "Electric",
+
+        "music": "Electronic",
+
+        "img": "./img/storm.jpg",
+
+
+    },
+    {
+
+        "id": "12",
+
+         "disc": "Don't worry. I'm... a detective",
+
+        "name": "Batgirl",
+
+        "age": "20",
+
+        "location": "Gotham City",
+
+        "hobbys": "the history of Gotham, enjoys grilling",
+
+        "music": "classical, opera, and pop music",
+
+        "img": "./img/batg.jpg"
+
+
+    },
+    {
+
+        "id": "13",
+
+         "disc": "'s not too often that you rob a place and then you get welcomed back",
+
+        "name": "Ant-Man",
+
+        "age": "26",
+
+        "location": "New York",
+
+        "hobbys": "Insects",
+
+        "music": "Classic",
+
+        "img": "./img/ant.jpg",
+
+
+    },
+    {
+
+        "id": "14",
+
+         "disc": "You wear a mask for so long, you forget who you were beneath it.",
+
+        "name": "V",
+
+        "age": "42",
+
+        "location": "London",
+
+        "hobbys": "Anarchy",
+
+        "music": "Clasic",
+
+        "img": "./img/v.jpg",
+
+
+    },
+    {
+
+        "id": "15",
+
+         "disc": "I want to die a natural death at the age of 102 – like the city of Detroit.",
+
+        "name": "Deadpool",
+
+        "age": "35",
+
+        "location": "Detroit",
+
+        "hobbys": "Chaos",
+
+        "music": "Metal",
+
+        "img": "./img/dead.jpg",
+
+
+    },
+    {
+
+        "id": "16",
+
+         "disc": "You asked about the Avengers.",
+
+        "name": "Captain America",
+
+        "age": "30",
+
+        "location": "New York",
+
+        "hobbys": "American History",
+
+        "music": "Contry",
+
+        "img": "./img/america.jpg",
+
+
+    }
+];
