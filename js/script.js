@@ -3,87 +3,97 @@ counter = 0;
 counter2 = 0;
 loopId = "#a" + 0;
 loopId2 = "#d" + 0;
-
-heartID = "#b";
 arr = [];
 $(document).ready(function() {
     //fill countent 1 with my Json in a Loop that makes row and Coloms automatic
-    for (let i = 0; i < persons.length; i++) {
+    function creat() {
+        for (let i = 0; i < persons.length; i++) {
 
-        if (i % 4 == 0 && i != 0) {
-            counter++;
-            loopId = "#a" + counter;
-            $(".cont1").append(`<div class = "row" id ="${"a" +counter}"></div>`);
-        } else if (i == 0) {
-            $(".cont1").append(`<div class = "row" id ="${"a" +counter}"></div>`);
-        }
-        $(loopId).append(`
-            <div class= "col-sm-12 col-md-6 col-lg-6 col-xl-3">
-            <img src="${persons[i].img}" id="${"b" +i}" alt="imgSuperhero"  width = "100%" height ="200em">  
-              <i class="fa fa-heart like" aria-hidden="true" id ="${"c"+i}"></i>
-            <br>
-            <p>"${persons[i].disc}"</p>
+            if (i % 4 == 0 || i == 0) {
+                loopId = "#a" + counter;
+                $(".cont1").append(`<div class = "row p-3 mx-0" id ="${"a" +counter}"></div>`);
+                counter++;
+            }
+
+            $(loopId).append(`
+            <div class= "col-sm-12 col-md-6 col-lg-6 col-xl-3 card p-2 back grid-sizer">
+            <img src="${persons[i].img}" class="rounded mx-auto d-block card-img-top " id="${"b" +i}"  alt="imgSuperhero" width = "100%" height ="300em">  
+              <i class="fa fa-heart like puls" aria-hidden="true" id ="${"c"+i}" ></i>
+               <figcaption class="figure-caption text-right">${persons[i].disc}"</figcaption>
             </div>`);
-        heartID = "#b" + i;
 
+        }
+        y();
     }
 
-    $(".like").click(function() {
-        $(this).toggleClass("heart");
-        $(this).css({ color: "red" });
-        var obj = persons[this.id.slice(1)];
-        console.log(obj);
-        arr.push(obj);
-        console.log(arr);
-        cont2();
+    window.onload = creat();
 
+    function y() {
+        $(".like").click(function() {
+        //    $(this).off('click');  ----------------> how make it active again??            
+        	var c = checkobj(this.id);
+        	if (c != "no"){
+            $(this).toggleClass("heart");
+            $(this).css({ color: "red" });
 
-    });
+            var obj = persons[this.id.slice(1)];
+            arr.push(obj);
+            cont2();
+        } else {
+        	console.log("Person can´t be added 2 times")
+        }
+        });
+    }
 
     function xy() {
-      $(".dislike").click(function() {
-      console.log("hallo");
-        $(this).toggleClass("heart")
-        $(this).css({ color: "#00000030" });
-        arr.splice(this.id.slice(1),1);
-        cont2();
-        // var obj = persons[this.id.slice(1)];
-        // console.log(obj);
-        // arr.remove(obj);
-        // console.log(arr); 
-        // cont2();
-
-
-      });
+        $(".dislike").click(function() {
+            $(this).toggleClass("heart")
+            $(this).css({ color: "red" });
+            arr.splice(this.id.slice(1), 1);
+            cont2();
+        });
     }
 
     function cont2() {
-        $("#d0").html("");
+        $(".cont2").html("");
+
+        counter2 = 0;
         for (let i = 0; i < arr.length; i++) {
+            if (i % 2 == 0 || i == 0) {
+                loopId2 = "#d" + counter2;
+                $(".cont2").append(`<div class = "row p-3 mx-0" id ="${"d"+ counter2}"></div>`);
+                counter2++;
+            }
 
-
-            $("#d0").append(`
-            <div class= "col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <img src="${arr[i].img}"  alt="imgSuperhero"  width = "100%" height ="400em">  
-          
-              <i class="fa fa-heart dislike" aria-hidden="true" style="color : red" id="${"e" +i}"></i>
-            <br>
-            <p>"${arr[i].name}"</p><br>
-            <p>"${arr[i].age}"</p><br
-            <p>"${arr[i].location}"</p><br>
-            <p>"${arr[i].hobbys}"</p><br>
-            <p>"${arr[i].music}"</p><br>
-            <p>"${arr[i].disc}"</p><br>
-
-
+            $(loopId2).append(`
+            <div class= "col-sm-12 col-md-12 col-lg-6 col-xl-6 card">
+            <img src="${arr[i].img}" class="rounded mx-auto d-block card-img-top" alt="imgSuperhero"  width = "100%" height ="500em">  
+            <i class="fa fa-heart dislike wiggle" aria-hidden="true" id="${"e" +i}"></i>
+            <figcaption class="figure-caption text-right">${arr[i].disc}"</figcaption>
+            <div class="card-body">
+            <h3><span class="badge badge-secondary">"${arr[i].name}"</span></h3>
+            <p>Age:"${arr[i].age}"</p>
+            <p>Location: "${arr[i].location}"</p>
+            <p>Hobbys: "${arr[i].hobbys}"</p>
+            <p>Music: "${arr[i].music}"</p>
+			</div>
             </div>`);
-            heartID = "#b" + i;
-
 
         }
-        xy()
+        xy();
     }
 
+    function checkobj(id) {
 
+    	let checkIt = "no";
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < persons.length; j++) {
+                if (arr[i].name == persons[id.slice(1)].name) {
+                   return checkIt
+                    
+                }
+            }
+        }
+    }
 
 });
