@@ -45,7 +45,7 @@
 
 	            if (i % 4 == 0 || i == 0) {
 	                loopId = "#a" + counter;
-	                $(".cont1").append(`<div class = "row p-3 mx-0 col" id ="${"a" +counter}"></div>`);
+	                $(".cont1").append(`<div class = "row p-3 mx-0 colo" id ="${"a" +counter}"></div>`);
 	                counter++;
 	            }
 
@@ -141,7 +141,7 @@
 	            let rand = Math.floor(Math.random() * 100 + 1);
 	            let proz = "" + rand + "%";
 	            $("#d0").append(`
-	            <div class= "col-sm-12 col-md-12 col-lg-6 col-xl-6 card col ">
+	            <div class= "col-sm-12 col-md-12 col-lg-6 col-xl-6 card colo">
 	            <div class="card speech m-3">
 	          
 	            <p>Age:${arr[i].age}</p>
