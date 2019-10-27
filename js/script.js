@@ -15,11 +15,11 @@
 	            <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 	                <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	                    <ul class="navbar-nav mr-auto">
-	                        <li class="nav-item active">
-	                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	                        <li class="nav-item active" >
+	                            <button class="button" id="home">Home</button>
 	                        </li>
-	                        <li class="nav-item">
-	                            <a class="nav-link" href="#">Favorits <span class="sr-only">(current)</span></a>
+	                        <li class="nav-item" >
+	                            <button class="button" id="fav">Favorits</button>
 	                        </li>
 					       
 	                    </ul>
@@ -52,7 +52,7 @@
 	            $(loopId).append(`
 	            <div class="ui-state-default col-sm-12 col-md-6 col-lg-6 col-xl-3 card p-2 grid-sizer panel">
 	            <img src="${persons[i].img}" class="rounded mx-auto d-block card-img-top " id="${"b" +i}" alt="imgSuperhero" width = "100%" height ="300em">  
-	              <i class="fa fa-heart like puls" aria-hidden="true" id ="${"c"+i}" ></i>
+	              <i class="fa fa-heart like puls " " aria-hidden="true" id ="${"c"+i}" ></i>
 	               <p class="text top-left">${persons[i].name}</p>
 	               <p class="text bottom-right ">${persons[i].disc}</p>
 	            </div>`);
@@ -60,6 +60,7 @@
 	        }
 	        y();
 	        sor();
+	        hide();
 	    }
 
 	    function footer() {
@@ -70,7 +71,7 @@
 	    }
 
 
-	   
+
 
 	    //like function for get Person into Cont2 and disable likebutton
 	    function y() {
@@ -93,11 +94,37 @@
 	    function xy() {
 	        $(".dislike").click(function() {
 	            $(this).toggleClass("heart")
-	            $(this).css({ color: "red" });
+	            let per = "#c" + checkColor(this.id.slice(1));	  	    	
+				$(per).css({ color: "#00000090" });
 	            arr.splice(this.id.slice(1), 1);
 	            cont2();
 	        });
 	    }
+		//change color back to black
+	    function checkColor(id){
+	    	let c = id;
+	    	
+	    	 for (let i = 0; i < arr.length; i++) {
+	            for (let j = 0; j < persons.length; j++) {
+	                if (arr[c].name == persons[j].name) {
+	    				return j;
+
+	                }
+	            }
+	        }
+	    }
+
+
+	    //function only show Fav and go back
+	    function hide() {
+		$(".collapse").on('click', '#fav', function () {
+	        $(".cont1").hide();
+	    });
+	    $(".collapse").on('click', '#home', function () {
+	        $(".cont1").show();
+	    });
+	 }
+
 	    //cont 2 get alle Persons from arr into cont2 container
 	    function cont2() {
 	        $(".cont2").html(`<div class = "row p-3 mx-0 col2" id ="${"d0"}"></div>`);
@@ -105,14 +132,14 @@
 	        counter2 = 0;
 	        for (let i = 0; i < arr.length; i++) {
 
-	        	//rows if i need some
+	            //rows if i need some
 	            // if (i % 2 == 0 || i == 0) {
 	            //     loopId2 = "#d" + counter2;
 	            //     $(".cont2").append(`<div class = "row p-3 mx-0 col2" id ="${"d"+ counter2}"></div>`);
 	            //     counter2++;
 	            // }
-	            let rand = Math.floor(Math.random() *100 +1);
-	            let proz = ""+ rand + "%";
+	            let rand = Math.floor(Math.random() * 100 + 1);
+	            let proz = "" + rand + "%";
 	            $("#d0").append(`
 	            <div class= "col-sm-12 col-md-12 col-lg-6 col-xl-6 card col ">
 	            <div class="card speech m-3">
@@ -125,7 +152,7 @@
 				</div>
 				<div class= "panel2 card">
 	            <img src="${arr[i].img}" class=" mx-auto d-block card-img-top" alt="imgSuperhero"  width = "100%" height ="500em">  
-	            <i class="fa fa-heart dislike wiggle" aria-hidden="true" id="${"e" +i}"></i>
+	            <i class="fa fa-heart dislike wiggle " aria-hidden="true" id="${"e" +i}"></i>
 	            <h2 class="text top-left ">${arr[i].name}</h2>
 				<p class="text bottom-right ">${arr[i].disc}</p>
 
@@ -247,7 +274,7 @@
 	            }
 	        });
 	    });
- creatHeaderandNav();
+	    creatHeaderandNav();
 	    creatMain(persons);
 	    footer();
-});
+	});
