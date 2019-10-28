@@ -268,7 +268,7 @@
 	            }
 	        });
 	        $('.cont2').sortable({
-	            items: '.col',
+	            items: '.colo',
 	            change: function(e, ui) {
 	                // Rearrange your columns between rows here
 	            }
